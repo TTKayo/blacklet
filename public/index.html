@@ -1,1 +1,126 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore-compat.js"></script>
+   
+    <title>User Stats</title>
+    <style>
+        /* Your existing styles */
+        #toptext {
+            font-size: 2.083vw;
+            font-family: Titan One, sans-serif;
+            text-decoration: none;
+            color: white;
+            filter: drop-shadow(0.000vw 0.000vw 0.260vw black);
+            margin-bottom: 1.042vw;
+            text-align: center;
+        }
+        #BarButton {
+            width: 100px;
+            height: 25px;
+            background-color: rgb(43, 41, 41);
+            border: none;
+            color: white;
+            font-family: Titan One, sans-serif;
+            font-size: 20px;
+        }
+        #BarButton:hover {
+            background-color: #fff;
+            width: 100px;
+            height: 30px;
+            color: black;
+        }
+        #stats-container {
+            border-radius: 0.365vw;
+            background-color: #2f2f2f;
+            width: 700px;
+            padding: 0.781vw 0.260vw 0.573vw;
+            box-shadow: inset 0 -0.313vw rgba(0, 0, 0, 0.2);
+            color: #fff;
+            position: relative;
+            margin-top: -30px;
+            margin-left: auto;
+            margin-right: auto;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 400px;
+        }
+        .in-container {
+            border-radius: 0.365vw;
+            background-color: #4f4f4f;
+            margin: 0.521vw;
+            width: 200px;
+            padding: 0.260vw 0.260vw 0.573vw;
+            box-shadow: inset 0 -0.313vw rgba(0, 0, 0, 0.2);
+            box-sizing: border-box;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: auto;
+            font-family: Titan One, sans-serif;
+            color: #fff;
+            font-size: 1.458vw;
+            text-align: center;
+        }
+        .pfp img {
+            width: 100px;
+            height: 100px;
+        }
+        .badges img {
+            width: 30px;
+            height: 30px;
+            margin: 5px;
+            display: flex;
+        }
+        #badges{
+            width: 350px;
+    height: 50px;
+    position: absolute;
+    
+    box-shadow: inset 0 -0.313vw rgba(0, 0, 0, 0.2);
+    background-color: #3f3f3f;
+    border-radius: 0.365vw;
+        }
+        a{
+            outline:none;
+        }
+        h1{
+            outline: none;
+        }
+        img{
+            width: 40px;
+        }
+    </style>
+</head>
+<body style="background-color: #373535;">
+    <div style="background-color: rgb(43, 41, 41); width: 200px; height: 750px; box-shadow: inset -0.521vw 0 rgba(0, 0, 0, 0.2); margin-left: -20px; margin-top: -25px;">
+        <a href="/public/rewrite/home/"><h1 id="toptext">Blacklet</h1></a>
+        <a href="/public/rewrite/stats/"><div class="in-container" style="width: 150px; margin-left: 25px; margin-top: 100px;" id="">stats</div></a>
+        <a href="/public/rewrite/"><div class="in-container" style="width: 150px; margin-left: 25px; margin-top: 20px; font-size: 20px;" id="">Leaderboard</div></a>
+        <a href="/public/rewrite/market/"><div class="in-container" style="width: 150px; margin-left: 25px; margin-top: 20px;" id="">market</div></a>
+        <a href="/public/rewrite/blooks/"><div class="in-container" style="width: 150px; margin-left: 25px; margin-top: 20px;" id="">blooks</div></a>
+        <a href="/public/rewrite/settings/"><div class="in-container" style="width: 150px; margin-left: 25px; margin-top: 20px;" id="">settings</div></a>
+        <a href="/public/rewrite/credits/"><div class="in-container" style="width: 150px; margin-left: 25px; margin-top: 20px;" id="">credits</div></a>
+
+    </div>
+    <div style="margin-top: -600px; display: flex;" id="stats-container">
+        <h1 id="toptext">Blooks</h1>
+        <div id="blacklets-container"></div>
+ 
+    </div>
+  <script src="/public/rewrite/js/innerjs/blooks.js"> </script>
+</body>
+</html>
